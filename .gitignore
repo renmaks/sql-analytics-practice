@@ -1,3 +1,16 @@
+# JetBrains
 .idea/
 *.iml
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+*.env
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3

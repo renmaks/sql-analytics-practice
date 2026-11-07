@@ -31,3 +31,7 @@ VALUES
     (4, 1, 2,500),
     (4, 3, 1,125),
     (5, 2, 1,5000);
+
+INSERT INTO postypashki_exercises2.products ( name, price)
+VALUES
+    ('skyrim', 2500);

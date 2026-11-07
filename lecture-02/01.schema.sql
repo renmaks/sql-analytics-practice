@@ -1,6 +1,6 @@
 CREATE SCHEMA IF NOT EXISTS postypashki_exercises2;
 
--- Задание 2:
+-- Задание 1:
 -- Создать схему для простого интернет-магазина.
 
 CREATE  TABLE postypashki_exercises2.users
@@ -27,7 +27,7 @@ CREATE  TABLE postypashki_exercises2.orders
     id              SERIAL PRIMARY KEY,
     user_id         INTEGER NOT NULL REFERENCES postypashki_exercises2.users(id),
     status          TEXT NOT NULL DEFAULT('new'),
-    total_amount    NUMERIC(25,2) NOT NULL CHECK(total_amount >= 0)
+    total_amount    NUMERIC(25,2) NOT NULL CHECK(total_amount >= 0) DEFAULT (0)
 );
 
 COMMENT ON TABLE postypashki_exercises2.orders is 'Содержит заказы интернет-магазина';
@@ -37,7 +37,7 @@ CREATE  TABLE postypashki_exercises2.order_items
     PRIMARY KEY(order_id, product_id),
     order_id    INTEGER REFERENCES postypashki_exercises2.orders(id),
     product_id  INTEGER REFERENCES postypashki_exercises2.products(id),
-    quantity    INTEGER NOT NULL CHECK(quantity > 0),
+    quantity    INTEGER NOT NULL CHECK(quantity > 0) DEFAULT (1),
     price       NUMERIC(25, 2) NOT NULL CHECK (price > 0)
 );
 

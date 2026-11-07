@@ -20,3 +20,14 @@ VALUES
 INSERT INTO postypashki_exercises2.order_items (order_id, product_id, price)
 VALUES
     (2, 2, 5000);
+
+INSERT INTO postypashki_exercises2.orders (user_id, total_amount)
+VALUES
+    (1, 0),
+    (3, 0);
+
+INSERT INTO postypashki_exercises2.order_items (order_id, product_id, quantity, price)
+VALUES
+    (4, 1, 2,500),
+    (4, 3, 1,125),
+    (5, 2, 1,5000);
